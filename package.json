@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",
+    "@sendgrid/mail": "^8.1.1",
+    "dotenv": "^16.4.1",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.36.0",
+    "uuid": "^9.0.1"
+  }
+}
