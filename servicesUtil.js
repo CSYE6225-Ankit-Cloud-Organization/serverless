@@ -31,7 +31,7 @@ async function createToken() {
 async function createLink(email, token) {
   try {
 
-    const verificationLink = `http://${process.env.SENDER_DOMAIN}:${APP_PORT}/verify?email=${encodeURIComponent(email)}&token=${encodeURIComponent(token)}`;
+    const verificationLink = `http://${process.env.SENDER_DOMAIN}:${process.env.APP_PORT}/verify?email=${encodeURIComponent(email)}&token=${encodeURIComponent(token)}`;
     return verificationLink;
   } catch (error) {
     console.error('Error creating link:', error);
