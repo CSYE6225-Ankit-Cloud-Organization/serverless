@@ -1,5 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../dbConnection');
+require('dotenv').config();
+const getDefaultLinkCreatedAt = () => new Date(Date.now() + process.env.LINK_EXPIRATION_TIME_IN_MINUTES * 60000);
 const Email = sequelize.define('Verifyemail', {
     id: {
         type: DataTypes.UUID,
@@ -21,9 +23,9 @@ const Email = sequelize.define('Verifyemail', {
         defaultValue: DataTypes.UUIDV4,
         allowNull: false
     },
-    link_created_at: {
+    link_expiry_at: {
         type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
+        defaultValue: getDefaultLinkCreatedAt,
         allowNull: false,
         readOnly: true
     },
